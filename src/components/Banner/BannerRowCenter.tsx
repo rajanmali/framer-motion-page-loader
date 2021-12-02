@@ -12,11 +12,11 @@ const BannerRowCenter = ({ title, playMarquee }: BannerRowCenterProps) => {
   return (
     <div className={`banner-row marquee ${playMarquee && 'animate'}`}>
       <div className="marquee__inner">
+        <AnimatedLetters title={title} disabled />
         <AnimatedLetters title={title} />
         <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
-        <AnimatedLetters title={title} />
+        <AnimatedLetters title={title} disabled />
+        <AnimatedLetters title={title} disabled />
       </div>
     </div>
   );
