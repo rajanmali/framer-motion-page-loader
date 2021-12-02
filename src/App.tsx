@@ -19,26 +19,33 @@ function App() {
   }, [loading]);
 
   return (
-    <AnimatePresence>
-      {loading ? (
-        <motion.div key="loader">
-          <Loader setLoading={setLoading} />
-        </motion.div>
-      ) : (
-        <>
-          <Header />
-          <Banner />
-          {!loading && (
-            <div className="transition-image final">
-              <img
-                src={process.env.PUBLIC_URL + '/images/image-2.jpg'}
-                alt="transition"
-              />
-            </div>
-          )}
-        </>
-      )}
-    </AnimatePresence>
+    <AnimateSharedLayout type="crossfade">
+      <AnimatePresence>
+        {loading ? (
+          <motion.div key="loader">
+            <Loader setLoading={setLoading} />
+          </motion.div>
+        ) : (
+          <>
+            <Header />
+            <Banner />
+            {!loading && (
+              <div className="transition-image final">
+                <motion.img
+                  src={process.env.PUBLIC_URL + '/images/image-2.jpg'}
+                  alt="transition"
+                  layoutId="main-image-1"
+                  transition={{
+                    ease: [0.6, 0.01, -0.05, 0.96],
+                    duration: 1.6,
+                  }}
+                />
+              </div>
+            )}
+          </>
+        )}
+      </AnimatePresence>
+    </AnimateSharedLayout>
   );
 }
 
