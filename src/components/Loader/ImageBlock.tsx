@@ -9,8 +9,8 @@ const ImageBlock = ({ id }: ImageBlockProps) => {
   return (
     <div className={`image-block ${id}`}>
       <Image
-        src={process.env.PUBLIC_URL + `images/${id}.webp`}
-        fallback={process.env.PUBLIC_URL + `images/${id}.jpg`}
+        src={process.env.PUBLIC_URL + `/images/${id}.webp`}
+        fallback={process.env.PUBLIC_URL + `/images/${id}.jpg`}
         alt={id}
       />
     </div>
