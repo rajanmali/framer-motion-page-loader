@@ -12,11 +12,11 @@ const Banner = () => {
     setPlayMarquee(true);
   }, []);
   return (
-    <div className="banner">
+    <section className="banner">
       <BannerRowTop title="brand" />
       <BannerRowCenter title="experience" playMarquee={playMarquee} />
       <BannerRowBottom title="studio" />
-    </div>
+    </section>
   );
 };
 
