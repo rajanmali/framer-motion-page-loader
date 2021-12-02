@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 // Components
 import Image from '../Image';
 
@@ -7,13 +9,16 @@ interface ImageBlockProps {
 
 const ImageBlock = ({ id }: ImageBlockProps) => {
   return (
-    <div className={`image-block ${id}`}>
+    <motion.div
+      className={`image-block ${id}`}
+      animate={{ scale: 0.5, transition: { duration: 1 } }}
+    >
       <Image
         src={process.env.PUBLIC_URL + `/images/${id}.webp`}
         fallback={process.env.PUBLIC_URL + `/images/${id}.jpg`}
         alt={id}
       />
-    </div>
+    </motion.div>
   );
 };
 

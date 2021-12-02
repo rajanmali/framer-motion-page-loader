@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-
 // Components
 import ImageBlock from './ImageBlock';
 interface LoaderProps {
