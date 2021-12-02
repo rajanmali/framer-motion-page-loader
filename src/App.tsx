@@ -1,25 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+
+// Components
+import Loader from './components/Loader';
+import Header from './components/Header';
+import Banner from './components/Banner';
+
+// Styles
+import './assets/scss/main.scss';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loading
+      ? document.querySelector('body')?.classList.add('loading')
+      : document.querySelector('body')?.classList.remove('loading');
+  }, [loading]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {loading ? (
+        <Loader setLoading={setLoading} />
+      ) : (
+        <>
+          <Header />
+          <Banner />
+          {!loading && (
+            <div className="transition-image final">
+              <img
+                src={process.env.PUBLIC_URL + '/images/image-2.jpg'}
+                alt="transition"
+              />
+            </div>
+          )}
+        </>
+      )}
+    </>
   );
 }
 
