@@ -1,3 +1,3 @@
 export interface BannerComponentTypes {
-  title: String;
+  title: string;
 }
