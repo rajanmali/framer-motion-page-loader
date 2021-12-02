@@ -22,14 +22,14 @@
     }
     .row-title,
     .row-letter {
-      font-size: 28rem;
+      font-size: 22rem;
       font-weight: 500;
       position: relative;
       letter-spacing: -0.8rem;
       display: inline-block;
       white-space: nowrap;
       @media (max-width: $layout-breakpoint-xsmall) {
-        font-size: 13rem;
+        font-size: 10rem;
       }
     }
     .row-col {
