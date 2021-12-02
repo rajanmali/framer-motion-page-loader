@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Components
 import Loader from './components/Loader';
@@ -18,9 +19,11 @@ function App() {
   }, [loading]);
 
   return (
-    <>
+    <AnimatePresence>
       {loading ? (
-        <Loader setLoading={setLoading} />
+        <motion.div key="loader">
+          <Loader setLoading={setLoading} />
+        </motion.div>
       ) : (
         <>
           <Header />
@@ -35,7 +38,7 @@ function App() {
           )}
         </>
       )}
-    </>
+    </AnimatePresence>
   );
 }
 

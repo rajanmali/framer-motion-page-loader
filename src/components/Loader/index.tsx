@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // Components
@@ -36,14 +35,6 @@ const item = {
 };
 
 const Loader = ({ setLoading }: LoaderProps) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <div className="loader">
       <motion.div
@@ -52,6 +43,9 @@ const Loader = ({ setLoading }: LoaderProps) => {
         initial="hidden"
         animate="show"
         exit="exit"
+        onAnimationComplete={() => {
+          setLoading(false);
+        }}
       >
         <ImageBlock id="image-1" variants={item} />
         <div className="transition-image">
