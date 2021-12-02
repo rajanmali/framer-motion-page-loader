@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 
+// Components
+import BannerRowTop from './BannerRowTop';
+import BannerRowCenter from './BannerRowCenter';
+import BannerRowBottom from './BannerRowBottom';
+
 const Banner = () => {
   const [playMarquee, setPlayMarquee] = useState(false);
 
