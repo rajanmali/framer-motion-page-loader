@@ -1,6 +1,6 @@
 interface ImageProps {
   src: string;
-  type: string;
+  type?: string;
   alt: string;
   fallback: string;
 }
