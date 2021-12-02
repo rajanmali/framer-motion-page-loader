@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 
 // Components
 import Loader from './components/Loader';

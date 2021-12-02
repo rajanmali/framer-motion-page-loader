@@ -14,7 +14,7 @@ const container = {
   },
 };
 
-const item = {
+const itemMain = {
   hidden: {
     opactiy: 0,
     y: 200,
@@ -27,6 +27,10 @@ const item = {
       duration: 1.6,
     },
   },
+};
+
+const item = {
+  ...itemMain,
   exit: {
     opacity: 0,
     y: -200,
@@ -48,12 +52,12 @@ const Loader = ({ setLoading }: LoaderProps) => {
         }}
       >
         <ImageBlock id="image-1" variants={item} />
-        <div className="transition-image">
+        <motion.div className="transition-image" variants={itemMain}>
           <img
             src={process.env.PUBLIC_URL + '/images/image-2.jpg'}
             alt="transition"
           />
-        </div>
+        </motion.div>
         <ImageBlock id="image-3" variants={item} />
         <ImageBlock id="image-4" variants={item} />
         <ImageBlock id="image-5" variants={item} />
